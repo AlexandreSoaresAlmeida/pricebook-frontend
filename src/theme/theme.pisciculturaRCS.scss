@@ -1,0 +1,50 @@
+.theme-tilapiasDF{
+    ion-content {
+        background-color: #F6F6F2;
+    }
+    
+    ion-item,
+    ion-label {
+        transition: all 1.1s ease;
+        //background-color: #000000 !important;
+        //background: #FFFFFF !important;
+        color: 000000 !important;
+    }
+    
+    .toolbar-title {
+        color: #ffffff;
+    }
+    
+    .header .toolbar-background {
+        border-color: #3C3C3C;
+        background-color: #4975B2;
+    }
+    
+    .button {
+        border-color: #3C3C3C;
+        background: #4975B2;
+    }
+    
+    .toolbar-background-md {
+        background-color: #4975B2;
+        border-color: #3C3C3C;
+        background: #4975B2;
+    }
+    
+    .toolbar-title-md {
+        font-size: 18px;
+        color: #FFFFFF;
+    }
+
+    #cabecalho-menu .item-inner {
+        border: none;
+    }
+
+    .bar-button-menutoggle-md ion-icon {
+        color: #FFFFFF;
+    }
+
+    button.fab.fab-md {
+        background: #C40000;
+    }
+}

@@ -1,0 +1,45 @@
+page-leitor {
+  * {
+    overflow-y: hidden !important;
+    overflow-x: hidden !important;
+  }
+ 
+  div.toolbar-container .toolbar-container {
+    background-color: #3880FF;
+  }
+  
+  toolbar-title {
+    color: #000;
+  }
+
+  .button-md {
+    background-color: #33B5E5;
+  }
+
+  .toolbar-background-md {
+    border-color: #b2b2b2;
+    background: #33B5E5;
+  }
+
+  .toolbar-title-md {
+    padding: 0 12px;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #000;
+  }
+
+  .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
+    color: #000;
+    background-color: transparent;
+  }
+
+  .button-inner {
+    color: #000;
+  }
+
+  .center{
+    margin-left: auto;
+    margin-right: auto;
+    display: block !important;
+  }
+}

@@ -1,0 +1,59 @@
+page-dashboard {
+    .doughnut-chart-container {
+        height: 260px;
+        width: 260px;
+        float: left;
+      }
+
+    toolbar-title {
+        color: #000;
+    }
+ 
+    .toolbar-title-md {
+        padding: 0 12px;
+        font-size: 2rem;
+        font-weight: 500;
+        color: #000;
+    }
+    
+    .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
+        color: #000;
+        background-color: transparent;
+    }
+    
+    .button-inner {
+       color: #000;
+    }
+
+    .segment {
+       color: #fff;
+       background-color: #3F51B5;
+    }
+
+    .chartjs-render-monitor {
+       animation: chartjs-render-animation 0.001s;
+       background: #fff;
+    }
+  
+    .segment-md .segment-button {
+        color: #ffffff;
+    }
+
+    .txtGrafico {
+        font-family: Arial, Helvetica, sans-serif; 
+        color: #3F51B5; 
+        word-wrap: true; 
+        padding: 2 2 2 2; 
+        width: 90%; 
+        text-align: center;
+        font-size:18px;
+        visibility: visible;
+        margin: 0px;
+        padding-bottom: 10px;
+    }
+
+    .segment-md .segment-button.activated, .segment-md .segment-button.segment-activated {
+        border-color: #FEAF33;
+        opacity: 1;
+    }
+}

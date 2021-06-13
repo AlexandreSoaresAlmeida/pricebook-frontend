@@ -1,0 +1,75 @@
+page-profile {
+    .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
+        color: #FFF;
+        background-color: transparent;
+    }
+    
+    .circle {
+        width: 60%;
+        border-radius: 100%;
+        margin: 25px auto 0 auto;
+    }
+
+    .avatar-wrapper {
+        position: relative;
+        width: 200px;
+        margin: auto;
+
+        ion-avatar img {
+            background-color: #DDDDDD;
+            width: 200px;
+            height: 200px;
+            margin: auto;
+        }
+
+        .btn-tirar-foto {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 45px;
+            height: 45px;
+        }
+    }
+    
+    
+    .button-inner {
+        color: #FFF;
+      } 
+      
+    .toolbar-title-md {
+        padding: 0 12px;
+        font-size: 2rem;
+        font-weight: 500;
+        color: #000;
+    }
+
+    .circle2 {
+        border-radius: 90%;
+        overflow: hidden;
+        width: 218px;
+        height: 218px;
+        border: 20px solid #ffff;
+    }
+
+    .circle3 {
+        border-radius: 90%;
+        overflow: hidden;
+        width: 222px;
+        height: 222px;
+        border: 1px solid #FEAF33;
+    }    
+
+    .starback {
+        padding-top:5px;
+        font-size: 29px;
+      }
+
+      .star {
+        padding-top:6px;
+        font-size: 20px;
+        position:relative;
+        left: -25.7px;
+        top: -3.2px;
+      }
+
+}

@@ -1,0 +1,96 @@
+myapp {
+
+    .circle2 {
+        border-radius: 90%;
+        overflow: hidden;
+        width: 40px;
+        height: 40px;
+        border: 6px solid yellow;
+    }
+
+    .toolbar-title-md {
+        color: #FFFFFF;
+    }
+
+    #cabecalho-menu .item-inner {
+        border: none;
+    }
+
+    .toolbar-title-md {
+        padding: 0 12px;
+        font-size: 2rem;
+        font-weight: 500;
+        color: #000;
+      }
+
+      .starback {
+        padding-top:5px;
+        font-size: 29px;
+      }
+
+      .star {
+        padding-top:6px;
+        font-size: 20px;
+        position:relative;
+        left: -23.5px;
+        top: -3.5px;
+      }
+      
+/*
+    .cabecalho-menu {
+        height: 150px;
+        margin-bottom: 10px;
+        background-image: url('../assets/imgs/cliente-benditoPastel/material-design-background-benditoPastel.jpg');
+
+        ion-avatar img {
+            width: 85px;
+            height: 85px;
+        }
+
+        h2 {
+            color: white;
+            font-weight: bold;
+        }
+
+        p {
+            color: #eee;
+        }
+
+   .item-md ion-icon[item-left], .item-md ion-icon[item-right], .item-md ion-icon[item-start], .item-md ion-icon[item-end] {
+        color: #CA9A00 !important;
+    }    
+
+    */
+
+    // ***********************************************
+    // Orange Theme
+    // ***********************************************
+    .toolbar-background-md {
+       background: #FEAF33;
+    }
+
+    .cabecalho-menu {
+        height: 150px;
+        margin-bottom: 10px;
+        background-image: url('../assets/imgs/templatesModels/material-design-background-orange.jpg');
+
+        ion-avatar img {
+            width: 85px;
+            height: 85px;
+        }
+
+        h2 {
+            color: white;
+            font-weight: bold;
+        }
+
+        p {
+            color: #eee;
+        }
+
+    }
+
+   .item-md ion-icon[item-left], .item-md ion-icon[item-right], .item-md ion-icon[item-start], .item-md ion-icon[item-end] {
+        color: #FEAF33;
+    } 
+}

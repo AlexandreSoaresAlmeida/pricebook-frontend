@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-navbar hideBackButton="true" showToggleButton="true">
+    <button ion-button menuToggle>
+      <ion-icon name="menu" color="dark"></ion-icon>
+    </button>
+    <ion-title>Dashboard - Gestão de Dados</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <p id="txtGrafico" class="txtGrafico">Selecione a consulta desejada a partir do painel abaixo:</p>
+    <ion-segment [(ngModel)]="segment" scrollable (ionChange)="updateGraph(segment)">
+      <ion-segment-button value="bar" style="font-size:11px;">
+          Acessos X Registros
+      </ion-segment-button>
+      <!--ion-segment-button value="line" style="font-size:11px;">
+          Vlr Produto X Dia
+      </ion-segment-button-->
+      <ion-segment-button value="doughnut" style="font-size:11px;">
+          Produtos X Novos Prod.
+      </ion-segment-button>
+    </ion-segment>
+
+  <div [ngSwitch]="segment" class="segment" style="z-index:9;">
+  
+      <ion-list *ngSwitchCase="'bar'" >
+        <div style="display: block; z-index:9;" width="600" height="800">
+          <h2 style="text-align:center; padding-top:7px; font-size:13px; color: #000;">ACESSOS X REGISTROS</h2>
+          <canvas baseChart width="80" height="85"
+            [datasets]="barChartData"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [legend]="barChartLegend"
+            [colors]="barChartColors"
+            [chartType]="barChartType"
+            (chartHover)="chartBarHovered($event)"
+            (chartClick)="chartBarClicked($event)">              
+          </canvas>
+        </div>
+      </ion-list>
+
+      <!--ion-list *ngSwitchCase="'line'" >
+          <div style="display: block; z-index:9;" width="600" height="800">
+            <h2 style="text-align:center; padding-top:7px; font-size:13px; color: #000;">VLR PRODUTO X DIA</h2>
+            <canvas baseChart width="300" height="400"
+                [datasets]="lineChartData"
+                [labels]="lineChartLabels"
+                [options]="lineChartOptions"
+                [colors]="lineChartColors"
+                [legend]="lineChartLegend"
+                [chartType]="lineChartType"
+                (chartHover)="lineChartHovered($event)"
+                (chartClick)="lineChartClicked($event)">
+            </canvas>
+            
+          </div>
+      </ion-list-->
+
+      <ion-list *ngSwitchCase="'doughnut'">
+        <div style="display: block; z-index:9;">
+          <h2 style="text-align:center; padding-top:7px; font-size:13px; color: #000;">PRODUTOS X NOVOS PRODUTOS</h2>
+          <canvas baseChart width="80" height="85"
+            [data]="doughnutChartData"
+            [labels]="doughnutChartLabels"
+            [chartType]="doughnutChartType"
+            [colors]="doughnutColors"
+            (chartHover)="chartDoughnutHovered($event)" 
+            (chartClick)="chartDoughnutClicked($event)">
+          </canvas>
+        </div>    
+      </ion-list>  
+    </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title style="font-size: 8px;">{{msgFooter}}</ion-title>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar hideBackButton="true" color="appgrey">
+    <button ion-button menuToggle  icon-only icon-left >
+      <ion-icon name="menu" persistent="true"></ion-icon>
+    </button>    
+    <ion-title>Pricebook</ion-title>
+  </ion-navbar> 
+  <ion-toolbar color="light">
+      <ion-searchbar placeholder="Pesquisar estabelecimento comercial" >
+                      [(ngModel)]="queryText"
+                      (ionInput)="updateStoresBySearch($event)">
+      </ion-searchbar>
+  </ion-toolbar>  
+  <ion-toolbar >
+      <ion-segment color="primary">  <!-- [(ngModel)]="storeFilter" (ionChange)="filterStores($event)"> -->
+          <ion-segment-button value="pesq">
+              Pesquisar na lista
+          </ion-segment-button>
+          <ion-segment-button value="cad">
+              Cadastrar novo local
+          </ion-segment-button>
+      </ion-segment>    
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+
+</ion-content>

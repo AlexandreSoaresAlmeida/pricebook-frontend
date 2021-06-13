@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <span class="cabecalho-login bold padding-left-5">Alterar Senha - {{ titleApp }}</span>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <img src="/assets/imgs/pricebook/ChangePassword.png" alt="logo">
+  <br>
+  <br>
+
+  <form [formGroup]="formGroup">
+    <ion-item>
+      <ion-label stacked>Nova Senha</ion-label>
+      <ion-input formControlName="novaSenha" type="password"></ion-input>
+    </ion-item>
+    <p *ngIf="formGroup.controls['novaSenha'].dirty && formGroup.controls['novaSenha'].errors" margin-left class="validationErr">Valor inválido</p>
+
+    <ion-item>
+      <ion-label stacked>Confirmação da Nova Senha</ion-label>
+      <ion-input formControlName="novaSenhaConfirmacao" type="password"></ion-input>
+    </ion-item>
+    <p *ngIf="formGroup.controls['novaSenhaConfirmacao'].dirty && formGroup.controls['novaSenhaConfirmacao'].errors" margin-left class="validationErr">Valor inválido</p>
+
+    <button ion-button block (click)="registrarNovaSenha()">
+        <ion-icon name="md-repeat"></ion-icon>&nbsp; Alterar Senha Agora
+    </button>
+  </form>
+  <button ion-button block (click)="retornar()">
+    <ion-icon name="md-return-left"></ion-icon>&nbsp; Retornar
+  </button>  
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title style="font-size: 8px;">{{msgFooter}}</ion-title>
+  </ion-toolbar>
+</ion-footer>

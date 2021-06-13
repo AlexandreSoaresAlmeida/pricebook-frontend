@@ -1,0 +1,45 @@
+<!-- Wrapper over the app which will use the theming-->
+<!--<div class="{{global.state['theme']}}">-->
+
+  <ion-menu [content]="content" persistent="true" type="overlay">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-item id="cabecalho-menu" class="cabecalho-menu">
+          <div>
+            <ion-avatar item-start>
+              <img class="circle2"  [style.borderColor]=icoEstrela [src]="cliente?.imageUrl || 'assets/imgs/pricebook/avatar-orange.png'">
+                <span style="position: absolute; top:20px; left: 110px; color: #000; font-family: verdana; font-size: 15px;">
+                  <ion-icon class="starback" name="star" style="color: #000; font-size: 30px;"></ion-icon>
+                  <ion-icon class="star" name="star" [style.color]=icoEstrela></ion-icon>
+                  <span style="position: relative; left:-26px;">{{pontosUsuario?.classificacao}} - <span style="font-size: 11px;">{{pontosUsuario?.qtd}} pontos</span></span>
+                </span>
+                <span style="position: absolute; top:60px; left: 110px; color: #000; font-family: verdana; font-size: 12px;">
+                usuário desde: {{cliente?.aceiteTermoUso | slice:0:10}}
+              </span>
+              <span style="position: absolute; top:80px; left: 110px; color: #000; font-family: verdana; font-size: 12px;">versão: {{app_version_local}}</span>
+            </ion-avatar>
+          </div>
+          <h2 style="color: #000;">{{cliente?.nome}}</h2>
+          <p style="color: #000;">{{cliente?.email}}</p>
+        </ion-item>
+
+        <ion-list>
+          <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+            <ion-icon [name]="p.icon" item-left></ion-icon>
+            <span *ngIf="p.ativo">{{p.title}}</span>
+            <span *ngIf="!p.ativo" style="color: #c0c0c0">{{p.title}}</span>
+          </button>
+        </ion-list>
+    </ion-content>
+
+  </ion-menu>
+
+  <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+  <ion-nav [root]="rootPage" #content swipeBackEnabled="false" [class]="selectedTheme"></ion-nav>
+  <!--<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>-->
+<!--</div>-->

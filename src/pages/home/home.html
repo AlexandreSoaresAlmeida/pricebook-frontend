@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar color="topo">
+    <ion-buttons start>
+      <!--button ion-button icon-only>
+        <ion-icon ios-outline="md-key" md="md-key" color="dark"></ion-icon>
+      </button-->
+    </ion-buttons>
+
+    <ion-title text-align="center">
+      <span class="cabecalho-login bold padding-left-5">Login - {{ titleApp }}</span>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <img src={{imgLogo}} alt="logo">
+  <span style="position: relative; top:-20px; left: +210px; color: #000; font-family: verdana; font-size: 12px;">versão: {{versionNumber}}</span>
+
+  <form>
+    <ion-item>
+      <ion-label stacked>Email</ion-label>
+      <ion-input [(ngModel)]="creds.email" name="email" type="text" value="{{lastUser?.email}}"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Senha</ion-label>
+      <ion-input [(ngModel)]="creds.senha" name="senha" type="password"></ion-input>
+    </ion-item>
+    <button ion-button block (click)="login()">
+        <ion-icon name="md-log-in"></ion-icon>&nbsp; Entrar
+    </button>
+  </form>
+  <button ion-button block (click)="esqueciSenha()" *ngIf="true">
+      <ion-icon name="ios-key"></ion-icon>&nbsp; Esqueci a senha
+  </button> 
+  <button ion-button block (click)="signup()">
+      <ion-icon name="md-person-add"></ion-icon>&nbsp; {{register}}
+  </button>
+  <button ion-button block (click)="sair()">
+    <ion-icon name="log-out"></ion-icon>
+      &nbsp; Sair do Aplicativo
+  </button>
+
+  <!---button ion-button block (click)="resetLocalStorage()">
+    <ion-icon name="log-out"></ion-icon>
+      &nbsp; Limpar ctrl dicas
+  </button-->
+  
+</ion-content>

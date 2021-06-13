@@ -1,0 +1,183 @@
+page-show-produto3 {
+    .item-input-has-focus .label-md[stacked],
+    .input-has-focus .label-md[stacked],
+    .item-input-has-focus .label-md[floating],
+    .input-has-focus .label-md[floating],
+    {
+    color: #3df5d6 !important;
+    }
+
+    * {
+        overflow-y: hidden !important;
+        overflow-x: hidden !important;
+      }
+    
+    ion-content .scroll-content{
+        overflow-y: hidden;
+        overflow: hidden;
+    }
+
+    .scroll-content {
+        overflow-y: hidden;
+    }
+
+    .no-scroll .scroll-content{
+        overflow: hidden;
+    }
+
+    ion-scroll.scroll-y .scroll-content::-webkit-scrollbar{
+        display: none;
+      }
+
+    .item-md ion-avatar ion-img, .item-md ion-avatar img {
+        width: 200px;
+        height: 200px;
+        align-self: center;
+        margin: auto;
+        display:block;
+        padding: 5px;
+    }
+
+    .preco_acima {
+        color: #BC1B33;
+        font-family: verdana;
+        font-weight: bold;
+        font-size:18px;
+        text-align:center;
+    }
+
+    .toolbar-title-md {
+        padding: 0 12px;
+        font-size: 2rem;
+        font-weight: 500;
+        color: #000;
+    }
+    
+    .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
+        color: #000;
+        background-color: transparent;
+    }
+    
+    .button-inner {
+        color: #000;
+    } 
+      
+   // Center:
+   .center {
+        text-align: center;
+    }
+    
+    .barcode-font-128 {
+        font-family: 'Libre Barcode 128', cursive;
+    }
+    .barcode-font-ean {
+        font-family: 'Libre Barcode 128', cursive;
+    }
+    .padding-left-17 {
+        padding-left: 17px;
+    }
+    .padding-left-10 {
+        padding-left: 10px;
+    }
+    .padding-top-10 {
+        padding-top: 10px;
+    }
+
+    .like {
+        background-color: #C2C3F9;
+    }
+    button {
+        width:55px;
+        height:65px;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .button {
+        border-color: #3C3C3C;
+        background: #C2C3F9;
+    }
+
+    .esq{
+        display: inline-block;
+        float: left;
+        width:10px;
+    }
+        
+    .dir{
+        display: inline-block;
+        float: right;
+        width: 450px;
+    }
+
+    .comprar{
+        color: #121538;
+        font-size: 23px;
+        text-align: center;
+        background-color:#C2C3F9;
+        padding-top: 15px;
+    }
+
+    .preco {
+        color: #000;
+        font-size: 20px;
+        font-weight:bold;
+        text-align: center;
+        line-height: 21px; 
+    }
+
+    .subpreco {
+        color: #000;
+        font-size: 15px;
+        font-weight:bold;
+        text-align: center;
+    }
+/*
+    .produto_img {
+        max-height: 35vh;
+        overflow: hidden;        
+        width:45px;
+        height:45px;
+    }
+*/
+    .cadastrar{
+        color: #DD5145;
+        font-size: 18px;
+        text-align: center;
+        padding-top: 15px;
+    }
+
+    .valor {
+        .item-input-has-focus .label-md[stacked],
+        .input-has-focus .label-md[stacked],
+        .item-input-has-focus .label-md[floating],
+        .input-has-focus .label-md[floating],
+        {
+        color: #3df5d6 !important;
+        }
+    }
+
+
+
+    // Blink
+    .blink {
+        animation: blink-animation 1s steps(5, start) infinite;
+        -webkit-animation: blink-animation 1s steps(5, start) infinite;
+      }
+      @keyframes blink-animation {
+        to {
+          visibility: hidden;
+        }
+      }
+      @-webkit-keyframes blink-animation {
+        to {
+          visibility: hidden;
+        }
+      }
+
+      .theme-priceBook .button {
+        border-color: #3C3C3C;
+        background: red;
+    } 
+
+}

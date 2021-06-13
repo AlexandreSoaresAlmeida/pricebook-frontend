@@ -1,0 +1,95 @@
+<!-- *************************************************************** -->
+<!-- Apresenta tela de cálculo e análise                             -->
+<!-- *************************************************************** -->
+  <ion-header>
+    <ion-navbar hideBackButton="true">
+      <button ion-button menuToggle>
+        <ion-icon name="menu" color="dark"></ion-icon>
+      </button>
+      <ion-title>PriceBook</ion-title>
+    </ion-navbar>
+  </ion-header>
+    
+  <ion-content no-padding class="no-scroll" overflow-scroll="false">
+    <div class="avatar-wrapper" style="width: 100%; text-align: center;" *ngIf="this.picture == 'assets/imgs/prod.jpg'">
+      <img class="produto_img" [src]="picture || 'assets/imgs/prod.jpg'" style="padding-top:15px;">
+    </div>
+    <div class="avatar-wrapper" style="width: 100%; text-align: center;" *ngIf="this.picture != 'assets/imgs/prod.jpg'">
+     <img class="produto_img" [src]="picture || 'assets/imgs/prod.jpg'" style="padding-top:15px; width: 50%">
+    </div>
+
+    <p style="margin:0; padding: 0 0 0 0; font-size:13px; width:100%; text-align: center; color: #002E5B;">{{msgNomeTmp}}</p>
+
+    <p style="padding-left: 63px; padding-top: 10px; padding-bottom: 0px;margin:0; ">Código de barras: {{produtoDTO?.barcode}}</p>
+    <div class="barcode-font-128 font55 center">{{produtoDTO?.barcode}}</div>
+      
+    <!-- Preço da última compra -->
+    <div style="width:100%;">
+      <div class="esq" style="margin:0; padding: 0 0 0 0;text-align: center; width:46%; padding-left:25px; display: inline-block;
+          float: left">
+        <div class="preco">Preço</div>
+        <div class="subpreco">Última Consulta (R$)</div>
+      
+        <div style="display:flex; flex-direction: row; justify-content: center; align-items: center; ">
+          <div *ngIf="!ultimoHistoricoProdutoDTO?.precoPromocional" style="border:2px solid #389B2E; background-color: #8DE989; color: #389B2E; 
+           height:38px; font-weight:bold; font-size:17px; padding: 6px 6px 6px 6px; width: 110px;">
+            {{ultimoHistoricoProdutoDTO?.preco | currency:'BRL':true}}
+          </div>	
+
+          <!-- Promoção -->
+          <div *ngIf="ultimoHistoricoProdutoDTO?.precoPromocional" style="border:2px solid #808000; background-color: #FFFF00; color: #000; 
+           height:38px; font-weight:bold; font-size:17px; padding: 6px 6px 6px 6px; width: 110px;">
+            {{ultimoHistoricoProdutoDTO?.preco | currency:'BRL':true}}
+          </div>	
+        </div>
+      </div> 
+          
+      <div class="dir" style="text-align: center; width:46%; padding-left:25px; display: inline-block;
+          float: right">
+        <div class="preco">Preço</div>
+        <div class="subpreco">Atual (R$)</div>
+        <div style="display:flex; flex-direction: row; justify-content: center; align-items: center;  ">
+          <div style="border:2px solid #389B2E; background-color: #8DE989; color: #389B2E; 
+           height:38px; font-weight:bold; font-size:17px; padding: 6px 6px 6px 6px; width: 110px;"
+           *ngIf="!maior">
+            {{novoHistoricoProdutoDTO?.preco | currency:'BRL':true}}
+          </div>
+          <div style="border:2px solid #F97F77; background-color: #FBD3D1; color: #BB1409; 
+            height:38px; font-weight:bold; font-size:17px; padding: 6px 6px 6px 6px; width: 110px;"
+            *ngIf="maior">
+            {{novoHistoricoProdutoDTO?.preco | currency:'BRL':true}}
+          </div>
+          <img src="assets/imgs/pricebook/seta_abaixo.png" style="padding-right:5px;" *ngIf="!maior">
+          <img src="assets/imgs/pricebook/seta_acima.png" style="padding-right:5px;" *ngIf="maior">
+        </div>
+      </div>
+    </div>
+
+    <span style="padding-top:5px; padding-left: 40px;">Data: {{ultimoHistoricoProdutoDTO?.dtHoraHistorico | slice:0:10}}</span>
+    <br style="height: 5px; line-height: 5px; font-size: 5px;">
+    <span  *ngIf="ultimoHistoricoProdutoDTO?.precoPromocional" class="blink" style="padding-left: 40px">
+      Preço promocional.
+    </span>
+    
+    <br>
+    
+    <!-- Cálculo da diferença entre preços quando não for a primeira compra -->
+    <div class="preco_acima" style="width:100%; padding-bottom: 5px;">
+      <span *ngIf="maior" style="color:#BC1B33;">{{this.percentual | number:'2.1-2':'pt_br'}}% </span> 
+      <span *ngIf="!maior" style="color:#4EAB45;">{{this.percentual | number:'2.1-2':'pt_br'}}% </span>  
+      <span style="color: #000;">variação sobre o <br>preço da última consulta.</span>
+    </div>
+
+    <button id="btnAbuso" style="display: block;" ion-button class="button-full" *ngIf="maior" (click)="alertRegistroAumentoAbusivoPreco()">
+      <ion-icon name="md-hand"></ion-icon>
+        &nbsp; Registrar percepção de preço abusivo
+    </button>
+    <button ion-button class="button-full" (click)="novaLeitura()">
+      <ion-icon name="ios-search"></ion-icon>
+        &nbsp; Retornar para Tela Principal
+    </button>
+    <button ion-button class="button-full" (click)="sair()">
+      <ion-icon name="log-out"></ion-icon>
+        &nbsp; Sair do Aplicativo
+    </button>
+</ion-content>

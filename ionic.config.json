@@ -1,0 +1,13 @@
+{
+  "name": "PriceBook_br",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "https://www.apptek.com.br/upload/pricebook"
+    }
+  ]
+}

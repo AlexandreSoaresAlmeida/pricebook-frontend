@@ -1,0 +1,37 @@
+<ion-header no-border>
+    <ion-navbar transparent hideBackButton="true">
+      <ion-title text-align="center">
+        <span class="cabecalho-login bold padding-left-5">Dicas - {{ titleApp }}</span>
+      </ion-title>
+      <ion-buttons right *ngIf="getShowDicas()">
+        <button ion-button color="light"
+                *ngIf="slideIndex < slides.length - 1"
+                class="skip-button"
+                (click)="skip()">Pular</button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+
+  <ion-content fullscreen="true" class="no-padding-top">
+    <ion-slides #slider pager="true" autoplay="10000" (ionSlideWillChange)="onSlideChanged()">
+      <ion-slide *ngFor="let slide of slides"
+                 class="slide-background"
+                 [ngStyle]="{'background-image': 'url(' + slide.imageUrl +')'}">
+        
+        <div class="text-wrapper">
+          <div class="slide-text">
+            <img class="ico" src="{{slide.icoUrl}}">
+            <h2 class="slide-title" [innerHTML]="slide.title"></h2><br>
+            <p [innerHTML]="slide.description"></p>
+          </div>
+        </div>
+      </ion-slide>
+    </ion-slides>
+    
+    <div class="swiper-button-prev" (click)="slidePrev()" *ngIf="slideIndex != 0"  style="color:#000; padding: 10px;"></div>
+    <div class="swiper-button-next" (click)="slideNext()" *ngIf="slideIndex < slides.length-1"></div>
+
+    <div class="floating-buttons pop-in" *ngIf="slideIndex >= slides.length - 1">
+      <button ion-button clear large full (click)="goToApp()">Clique aqui para iniciar!</button>
+    </div>
+  </ion-content>

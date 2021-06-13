@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <button ion-button menuToggle>
+      <ion-icon name="menu" color="dark"></ion-icon>
+    </button>
+    <ion-title>Meus dados</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+    <ion-item no-lines>
+        <div class="avatar-wrapper">
+          <div class="circle3">
+            <ion-avatar class="circle2" [style.borderColor]=icoEstrela>
+              <img [src]="cliente?.imageUrl || 'assets/imgs/pricebook/avatar-orange.png'">
+            </ion-avatar>
+          </div>
+    
+          <button (click)="getCameraPicture()" class="btn-tirar-foto" ion-button icon-only round [disabled]="cameraOn">
+            <ion-icon name="camera"></ion-icon>
+          </button>
+        </div>
+    </ion-item>
+
+    <ion-card class="welcome-card" style="width:94%;">   
+      <ion-card-header style="text-align: center; align-content: center;align-self: center;">
+        <h1 text-center>{{cliente?.nome}}</h1>  
+        <p text-center>{{cliente?.email}}</p>
+      </ion-card-header>
+      <ion-card-content>
+        <div style="position: relative; top:+0px; left: +0px; color: #000; font-family: verdana; font-size: 18px;">
+          <ion-icon class="starback" name="star" style="color: #000; font-size: 30px;"></ion-icon>
+          <ion-icon class="star" name="star" [style.color]=icoEstrela></ion-icon>
+          <span style="position: relative; left:-26px;">{{pontosUsuario?.classificacao}} - <span style="font-size: 18px;">{{pontosUsuario?.qtd}} pontos</span></span>
+        </div>
+        <div style="position: relative; top:+0px; left: +0px; color: #000; font-family: verdana; font-size: 18px;">
+          usuário desde: {{cliente?.aceiteTermoUso | slice:0:10}}
+        </div>      
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card *ngIf="picture" style="background-color: #F4FFA9;">
+      <ion-card-header color="primary">
+        Imagem Capturada para o seu Perfil
+      </ion-card-header>
+      <ion-item>
+        <img [src]="picture">
+      </ion-item>
+      <button ion-button block (click)="sendPicture()">Enviar imagem</button>
+      <button ion-button block (click)="cancel()">Descartar imagem</button>
+    </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title style="font-size: 8px;">{{msgFooter}}</ion-title>
+  </ion-toolbar>
+</ion-footer>

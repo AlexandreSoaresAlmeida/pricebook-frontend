@@ -1,0 +1,196 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Criar uma Conta - Pricebook</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="formGroup">
+    <ion-item>
+      <ion-label stacked>Nome Usuário*</ion-label>
+      <ion-input formControlName="nome" type="text"></ion-input>
+    </ion-item>
+    <p *ngIf="formGroup.controls['nome'].dirty && formGroup.controls['nome'].errors" margin-left class="validationErr">Valor inválido</p>
+    <ion-item>
+      <ion-label stacked>Email*</ion-label>
+      <ion-input formControlName="email" type="text"></ion-input>
+    </ion-item>
+    <p *ngIf="formGroup.controls['email'].dirty && formGroup.controls['email'].errors" margin-left class="validationErr">Valor inválido</p>
+    <ion-item>
+      <ion-label stacked>CEP</ion-label>
+      <ion-input formControlName="cep" type="text"></ion-input>
+    </ion-item>
+    <p *ngIf="formGroup.controls['cep'].dirty && formGroup.controls['cep'].errors" margin-left class="validationErr">Valor inválido</p>
+    <ion-item>
+      <ion-label stacked>Senha*</ion-label>
+      <ion-input formControlName="senha" type="password"></ion-input>
+    </ion-item>
+    <p *ngIf="formGroup.controls['senha'].dirty && formGroup.controls['senha'].errors" margin-left class="validationErr">Valor inválido</p>
+    <ion-item>
+      <ion-label stacked>Confirmar Senha*</ion-label>
+      <ion-input formControlName="confirmacao_senha" type="password"></ion-input>
+    </ion-item>
+    <p *ngIf="formGroup.controls['confirmacao_senha'].dirty && formGroup.controls['confirmacao_senha'].errors" margin-left class="validationErr">Valor inválido</p>
+
+    <!-- Termo de Uso -->
+    <sanfona title="Clique para ler termo de uso">
+      <h1>Termos de serviço</h1><br>
+      Para criar uma conta no Pricebook! você precisa concordar com nossos termos de 
+      serviço.<br>
+      
+      <br><h4><b>1. A empresa</b></h4><br>
+      Pricebook! É uma empresa brasileira com sede em Brasília, DF, que desenvolveu 
+      um aplicativo (APP) para uso em dispositivos móveis tipo smartphone, que através 
+      de leitura do código de barras, permite o usuário acompanhar a evolução histórica 
+      de preço de um determinado produto/marca. A ideia surgiu a partir de pesquisa que 
+      identificou que a grande maioria dos brasileiros não tem memória de preços de 
+      produtos/marcas consumidos. Associado a isso, o Brasil é um país de população 
+      com renda média baixa, o que faz com que uma melhor administração financeira 
+      doméstica seja um fator importante. O Pricebook! surgiu então como uma ferramenta 
+      DE EMPODERAMENTO DO CONSUMIDOR QUE O AUXILIA A TOMAR A MELHOR DECISÃO DE COMPRA 
+      no ponto de venda.<br><br>
+    
+      A empresa foi fundada por um profissional com larga experiência profissional e 
+      sólida formação acadêmica, com mestrado e doutorado em administração no exterior,
+      nas áreas de internacionalização de empresas e inovação, respectivamente. Como 
+      co-fundador, juntou-se à equipe, um profissional de alto gabarito técnico e 
+      acadêmico com mais de 20 anos de experiência na área de TI, em empresas privadas 
+      no Brasil. Toda a equipe do Pricebook! é composta de profissionais de excelente 
+      qualificação técnica e acadêmica, o que permite garantir a melhor prestação de 
+      serviços possíveis aos usuários e parceiros.<br>
+      
+      <br><h4><b>2. O sistema</b></h4><br>
+      O APP é um sistema de informações que após leitura do código de barra, registra e 
+      armazena os preços, datas e locais de compras de um determinado produto/marca 
+      escolhido pelo usuário. O sistema é composto pelo website 
+      <a href="https://www.pricebook.com.br">www.pricebook.com.br</a> e de um aplicativo 
+      para smartphone nas plataformas Android e IOS e disponível para download nas 
+      principais lojas virtuais de aplicativos.<br><br>
+    
+      Pricebook! é um sistema meramente informativo, que por ser alimentado de dados 
+      pelo usuário, não poderá ser responsabilizado por publicações consideradas 
+      imprecisas.<br><br>
+    
+      O sistema de funcionamento do Pricebook! foi integralmente desenvolvido pela 
+      equipe interna da empresa, que em conjunto com sua base de dados constituem 
+      segredo industrial e propriedade intelectual protegidos por lei.<br>
+      
+      <br><h4><b>3. Você no controle</b></h4><br>
+      O Pricebook! é de fácil usabilidade. O usuário de posse de um smartphone pode 
+      abrir uma conta pessoal no sistema e a partir daí fazer a leitura do código de 
+      barra de um determinado produto/marca, registrando seu preço atual e armazenando 
+      no sistema.<br><br>
+    
+      O Pricebook! exige cadastro prévio do usuário, que criará sua própria conta, com 
+      identificação de nome, e-mail e senha pessoal e intransferível.<br><br>
+    
+      Todas as inserções de produtos/marcas no sistema feitas pelo usuário é de sua 
+      responsabilidade. O Pricebook! é formatado de acordo com o perfil de consumo do 
+      usuário, onde a lista de produtos/marcas cadastradas são de sua livre escolha; 
+      portanto, todas as inserções de códigos de barras são de inteira responsabilidade 
+      do usuário.<br><br>
+    
+      Após registro, o preço, a data e local de consulta serão armazenados no sistema, 
+      podendo ser consultado posteriormente. Uma vez armazenado, os preços ficam à 
+      disposição do usuário e do usuário somente, não sendo compartilhado com outras 
+      pessoas ou empresas e nem alterado após sua inserção no sistema. Contudo, os 
+      códigos de barras poderão ser excluído pelo usuário de sua conta pessoal, podendo 
+      ser substituído por outro, dentro do limite de até 05 códigos de barras 
+      cadastrados para usuários FREE e até 20 para usuários PREMIUM.<br><br>
+    
+      Como os produtos/marcas e preços são registrados pelo usuário em sua conta 
+      pessoal, o Pricebook! não se responsabiliza por eventuais enganos de digitação, 
+      sendo a aceitação dessa regra, fator primordial para o uso dessa ferramenta.<br>
+      
+      <br><h4><b>4. Planos de Assinatura</b></h4><br>
+      O Pricebook! disponibiliza acesso gratuito (Free) ao público em geral com 
+      restrição de uso e funcionalidade, mediante cadastro prévio; bem como uma área 
+      privada, com funcionalidades e acesso à informações especificas, restrita aos 
+      assinantes pagantes (Premium).<br><br>
+    
+      Para o usuário na categoria FREE, o usuário tem direito, SEM NENHUM ÔNUS, 
+      cadastrar até 05 (cinco) códigos de barras diferentes de sua escolha e assim, 
+      acompanhar o histórico de preços desses produtos/marcas e abrir reclamações sobre 
+      aumento abusivo de preços dos produtos cadastrados, em um total de 05(cinco) 
+      reclamações no período de 1(um) ano. Cada numeração de código de barras refere-se 
+      a um produto/marca específico.<br><br>
+    
+      Para o usuário que subscrever com uma assinatura paga, categoria PREMIUM, terá 
+      direito a cadastrar até 20 (vinte) códigos de barras, acesso a dados como 
+      variação percentual (%) de preços acumulados no mês, semestre e ano e opção de 
+      abrir reclamações ilimitadas dos produtos cadastrados sobre aumentos abusivos de 
+      preço, que será encaminhada para o varejista e fabricante, com acompanhamento do 
+      Pricebook!<br><br>
+    
+      As opções de planos nas modalidades grátis e pagas poderão ser modificadas à 
+      qualquer tempo, sem aviso prévio da empresa; contudo, os planos já firmados, 
+      serão honrados até que uma das partes decida ao contrário, de acordo com a 
+      Constituição Federal e o Código de Defesa do Consumidor.<br>
+    
+      <br><h4><b>5. Direito Autoral</b></h4><br>
+      O sistema Pricebook! respeita as normas referente ao Direito Autoral e ocorrendo 
+      uma omissão involuntária de fontes, a empresa se encarregará de fazer a devida 
+      correção e citação dos detentores do direito autoral de acordo com a 
+      legislação.<br><br>
+    
+      As imagens das marcas comerciais eventualmente publicadas no sistema, quando em 
+      referencia ao produto cadastrado pelo usuário, não constituem uso comercial, 
+      portanto não sujeito á autorização prévia do respectivo detentor da marca. 
+      Essas imagens têm o objetivo de melhor identificação dos produtos pelo usuário, 
+      e nesse caso, são meramente ilustrativas.<br>
+    
+      <br><h4><b>6. Vínculos comerciais</b></h4><br>
+      Pricebook! é uma ferramenta digital comprometida com a melhor prestação de 
+      serviço possível aos seus usuários e assim, permite a inserção de propaganda 
+      paga em seu sistema, de forma que venha a agregar valor para seus usuários. 
+      Todas as propagandas pagas serão explicitamente identificadas. Cada anunciante 
+      poderá dispor de um espaço no APP e website que poderá até conter links das 
+      páginas dessas empresas. O sistema, entretanto não vai permitir propaganda paga 
+      no ambiente de uso privado dos usuários.<br><br>
+    
+      O Pricebook! tem uma política de independência rígida e que não aceita qualquer 
+      pressão de fabricantes ou anunciantes cujos produtos/marcas estejam cadastrados 
+      no sistema.<br>
+      
+      <br><h4><b>7. Programa de pontos dos Usuários</b></h4><br>
+      O Pricebook! computa pontos a partir do download, atualizações e a cada registro 
+      de dados com a seguinte pontuação:<br><br>
+      - Download e atualização de versão: 100 pontos<br>
+      - Registro de dados e avaliação de produtos: 10 pontos<br><br>
+      Classificação:<br>
+    - Nível 1 (Bronze):	0 - 100 pontos<br>
+    - Nível 2 (Silver): 	101 – 300 pontos<br>
+    - Nível 3 (Gold): 	301 – 500 pontos<br>
+    - Nível 4(Platinum):	501 – 1.000 pontos<br>
+    - Nível 5  (Emerald):	+ 1.000 pontos<br>
+
+      <br><h4><b>8. Política de privacidade</b></h4><br>
+      O Pricebook! não compartilha os dados cadastrais de seus usuários com terceiros,
+      salvo sob ordem judicial. Contudo, poderá compartilhar informações, sempre de 
+      forma genérica e anônima de dados estatísticos de navegação e sobre 
+      produtos/marcas, preços e locais de consulta, com parceiros, fornecedores de 
+      produtos/serviços, órgãos públicos e imprensa, de forma a aprimorar e equilibrar 
+      as relações de mercado e políticas de defesa do consumidor.<br><br>
+    
+      O Pricebook! poderá também acompanhar sempre de forma genérica e anônima as 
+      preferências de consumo dos usuários, visando identificar formas de melhorar a 
+      experiência de utilização do sistema.
+      <br><br>
+      <div style="text-align:right;">Brasília, DF 24 de maio de 2019.</div>
+      <br><br>
+        
+    </sanfona>                  
+    <ion-item style="text-align: left;">
+        <ion-checkbox item-left checked="false" name="aceite_termo_uso" formControlName="aceite_termo_uso"></ion-checkbox>
+        <ion-label>Li e aceito o termo de uso</ion-label>
+    </ion-item>
+
+    <br>
+    <button ion-button block type="submit" [disabled]="formGroup.invalid" (click)="signupUser(); $event.preventDefault();">
+        <ion-icon name="md-person-add"></ion-icon>&nbsp; Criar conta pelo aplicativo
+    </button>
+    <button ion-button block (click)="retornar()">
+      <ion-icon name="md-return-left"></ion-icon>&nbsp; Ir para tela de "Login"
+    </button> 
+  </form>
+</ion-content>

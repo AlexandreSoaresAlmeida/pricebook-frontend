@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar color="topo" hideBackButton="true">
+    <ion-buttons start>
+      <button ion-button icon-only>
+        <ion-icon ios-outline="md-key" md="md-key" color="dark"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title text-align="center">
+      <span class="cabecalho-login bold padding-left-5">Redefinir Senha</span>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <img src="/assets/imgs/pricebook/forgot.png" alt="logo"> 
+  <br>
+  <br>
+  <form [formGroup]="formGroup">
+    <ion-item>
+      <ion-label stacked>Informe o seu email de acesso*:</ion-label>
+      <ion-input formControlName="email" type="text" value=""></ion-input>
+    </ion-item>
+    <br>
+    <button ion-button block type="submit" [disabled]="formGroup.invalid" (click)="resetPassword()">
+        <ion-icon name="md-log-in"></ion-icon>&nbsp;ENVIAR REDEFINIÇÃO DE SENHA
+    </button>
+  </form>
+  <button ion-button block (click)="retornar()">
+      <ion-icon name="md-return-left"></ion-icon>&nbsp;RETORNAR
+  </button>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title style="font-size: 8px;">{{msgFooter}}</ion-title>
+  </ion-toolbar>
+</ion-footer>

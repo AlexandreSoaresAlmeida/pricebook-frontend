@@ -1,0 +1,232 @@
+page-signup {
+    .validationErr {
+        color: red;
+    }
+
+    .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
+        color: #000;
+        background-color: transparent;
+    }
+
+    .button-inner {
+        color: #000;
+      } 
+      
+    .toolbar-title-md {
+        padding: 0 12px;
+        font-size: 2rem;
+        font-weight: 500;
+        color: #000;
+    }
+
+
+    // configurações accordion
+    .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
+        color: #FFFFFF;
+        background-color: transparent;
+    }
+    
+    .property:before {
+        top: 3px;
+        margin-right: 7px;
+        display: inline-block;
+        background-image: url(../../assets/imgs/cliente-tilapiasDF/receitas/receita-001/properties.png);
+        background-size: 16px;
+        width: 16px;
+        height: 16px;
+    }
+    
+    .property.comensales:before {
+        background-position: 0 0;
+    }
+    
+    .property.duracion:before {
+        background-position: 0 -17px;
+    }
+    
+    .property.para:before {
+        background-position: 0 -34px;
+    }
+    
+    .property.dificultad:before {
+        background-position: 0 -51px;
+    }
+
+    // ********************************
+    // Title
+    // ********************************
+
+    // ico + títle
+    .titulo.titulo--search {
+        width: calc(100% - 1em);
+        font-size: 1.4em;
+        line-height: 1.2;
+        border-bottom: 1px solid #333;
+        margin: .1em .5em .5em;
+        color: #333;
+    }
+
+    .hubicon.xl {
+        width: 35px;
+        height: 35px;
+        background-size: 70px;
+    }
+
+    .hubicon {
+        background-color: transparent;
+        border: none;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 .15em 0 0;
+        background-image: url(../../assets/imgs/cliente-tilapiasDF/receitas/hubsicons.png);
+        background-repeat: no-repeat;
+    }
+
+    .positivo.hubicon--pescado.xl {
+        background-position: 0 -315px;
+    }
+
+    .descripcion_categoria {
+        font-size: .9em;
+        padding: 0 1em 1.5em;
+        line-height: 1.2;
+        font-style: italic;
+        display: inline-block;
+        text-align: justify;
+        font-weight: normal;
+    }
+
+    // *****************************
+    
+    .recipe-info {
+        border: 1px solid #DEC201;
+        border-bottom: none;
+        margin: 1em;
+    }
+
+    .recipe-info .properties {
+        padding: .5em 1.1em;
+        font-size: 1.1em;
+    }
+    .recipe-info .ingredientes, .recipe-info .ingredientes-amp, .recipe-info .properties {
+        border-bottom: 1px solid #DEC201;
+    }
+
+    .recipe-info .properties {
+        padding: .5em 1.1em;
+        font-size: 1.1em;
+    }
+    .recipe-info .ingredientes, .recipe-info .ingredientes-amp, .recipe-info .properties {
+        border-bottom: 1px solid #DEC201;
+    }
+
+    .recipe-info .properties.inline {
+        line-height: 1.4;
+    }
+
+    .apartado h3, .intro h3, .titulo.titulo--h3 {
+        font-size: 1.2em;
+        line-height: 1.2;
+        font-weight: 600;
+        padding: 0 .3em 0 .1em;
+        margin: .5em 1em .25em;
+        color: #333;
+        display: block;
+    }
+    .titulo {
+        text-decoration: none!important;
+    }
+
+    // *******************
+    .strong {
+        font-size: 14px;
+        color:#656565;
+        font-weight: bold;
+        padding-left:15px;
+    }
+
+    .properties {
+        color: #656565;
+        font-size: 8px;
+    }
+
+    .recipe-info .properties {
+        padding: .5em 1.1em;
+        font-size: 1.1em;
+    }
+
+    .property.comensales:before {
+        background-position: 0 0;
+   }
+
+    .property:before {
+        top: 3px;
+        margin-right: 7px;
+        display: inline-block;
+        background-image: url(../../assets/imgs/cliente-tilapiasDF/receitas/properties.png);
+        background-size: 16px;
+        width: 16px;
+        height: 16px;
+    }
+    
+    .place-item, .property:before {
+        position: relative;
+    }
+    .apartado.apartado--galeria .video:before, .comentarios .barra:after, .property:before, .resultado .video-icon:before, footer .lista-enlaces a:before {
+        content: "";
+    }
+    .apartado.apartado--galeria .video .thumbnail-video, .apartado.apartado--galeria .video:before, .bloque .video-icon:before, .comentario .imagen, .descubre, .formulario .rating .valoracion+label, .property:before, .pulgar:before, .resultado .video-icon:before, .spinner .spin, .stars .total, .stars .valoracion {
+        background-repeat: no-repeat;
+    }
+    .property:before, .spinner .spin {
+        background-position: center center;
+    }
+    *, :after, :before {
+        -webkit-box-sizing: inherit;
+        -ms-box-sizing: inherit;
+        -moz-box-sizing: inherit;
+        -o-box-sizing: inherit;
+        box-sizing: inherit;
+    }
+
+    article .ingredientes li label:before {
+        line-height: .5;
+    }
+    input[type=checkbox]+label:before {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        width: 15px;
+        height: 15px;
+        border: 2px solid #343434;
+        margin: 0 .35em 0 0;
+        border-radius: 2px;
+        top: -2px;
+        position: relative;
+        color: #A2A2A2;
+        line-height: 1.1;
+        padding-left: .1em;
+    }
+    *, :after, :before {
+        -webkit-box-sizing: inherit;
+        -ms-box-sizing: inherit;
+        -moz-box-sizing: inherit;
+        -o-box-sizing: inherit;
+        box-sizing: inherit;
+    }
+    
+
+    //*********
+    .ios, .md {
+
+        page-home {
+    
+            button {
+                align-items: baseline;
+            }
+    
+        }
+    
+    }    
+
+}

@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Biblioteca de Produtos</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list>
+    <button ion-item *ngFor="let item of items" (click)="showDetail(item.produto.id, cliente_id, item.produto.barcode)" style="padding-left: 0px;">
+      <ion-thumbnail item-start>
+        <img [src]="item?.produto?.imageUrl || 'assets/imgs/prod.jpg'">
+      </ion-thumbnail>
+      <p style="line-height:15px; height:13px; font-size:12px; font-family: Verdana, Geneva, Tahoma, sans-serif;">Cód. barras: {{item?.produto?.barcode}}</p>
+      <div class="barcode-font-128 font45">{{item?.produto?.barcode}}</div>
+      <h2 class="txtMsgNomeTmp" style="color:#4C6C8C; position:relative; top:-15px;">Último registro: {{item?.dtHoraHistorico | date:'dd/MM/yyyy HH:mm'}}</h2>
+      <h2 *ngIf="item?.nomeTempProduto  == msgNomeTmp" class="txtMsgNomeTmp" style="color:#4C6C8C;">{{item?.nomeTempProduto}}</h2>
+      <h2 *ngIf="item?.nomeTempProduto  != msgNomeTmp" class="txtMsgNomeTmp" style="color:#D00018;">{{item?.nomeTempProduto}}</h2>
+    </button>
+  </ion-list>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title style="font-size: 8px;">{{msgFooter}}</ion-title>
+  </ion-toolbar>
+</ion-footer>

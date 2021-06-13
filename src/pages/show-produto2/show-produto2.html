@@ -1,0 +1,77 @@
+<!-- *************************************************************** -->
+<!-- Apresenta tela quando há registro do histórico de produto   -->
+<!-- *************************************************************** -->
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <button ion-button menuToggle>
+      <ion-icon name="menu" color="dark"></ion-icon>
+    </button>
+    <ion-title>PriceBook</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding class="no-scroll" overflow-scroll="false">
+  <div class="avatar-wrapper" style="width: 100%; text-align: center;" *ngIf="this.picture == 'assets/imgs/prod.jpg'">
+    <img id="produtoIdImg" class="produto_img" [src]="picture" style="padding-top:15px;">
+  </div>
+  <div class="avatar-wrapper" style="width: 100%; text-align: center;" *ngIf="this.picture != 'assets/imgs/prod.jpg'">
+   <img id="produtoIdImg" class="produto_img" [src]="picture" style="padding-top:15px; width: 55%;">
+  </div>
+  
+  <p id="msgNomeTmp" style="margin:0; padding: 0 0 0 0; font-size:13px; width:100%; text-align: center; color: #002E5B; visibility: hidden;">imagem meramente ilustrativa</p>
+
+  <p id="msgImagemNaoCorrespondente" style="display:block; font-size:13px; width:100%; text-align: center; color: #D00018; line-height:6px; height:6px;" *ngIf="this.picture != 'assets/imgs/prod.jpg'">
+    <span style="position: relative; top:-10.5px;">Se a imagem não condiz com o produto, clique aqui</span>
+    <ion-img (click)="atualizaImagemNaoCorrespondente()" style="width: 20px;height: 20px; background: #fff;" src="../assets/imgs/pricebook/error_img.png"></ion-img>
+  </p>
+
+  <p style="margin:0; padding: 0 0 0 0; font-size:13px; width:100%; text-align: center; color: #002E5B;">{{msgNomeTmp}}</p>
+
+  <p style="padding-left: 63px; line-height:7px; height:7px;">Código de barras: {{produtoDTO?.barcode}}</p>
+  <div class="barcode-font-128 font55 center" style="line-height:7px; height:7px; padding-top:14px;">{{produtoDTO?.barcode}}</div>
+      
+    <!-- Preço da última compra -->
+    <form [formGroup]="showProdutoForm">
+    <div style="padding-top:10px;">
+      <div class="" style="text-align: center;">
+        <div class="preco">Preço</div>
+        <div class="subpreco">atual (R$)*</div>
+        <input 
+           formControlName="preco"
+           currencyMask 
+           name="preco"
+           [(ngModel)]="preco"
+           [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }"
+           style="font-family: verdana; font-size:18px; text-align: right;
+                  color: #003E00; border-color: 3px solid #389B2E; background-color:
+                #8DE989; height:37px; font-weight:bold; font-size:17px; width: 50%;" 
+        />
+      </div>
+    </div>
+    
+    <ion-item style="text-align: center; width: 80%; padding-left:25%;">
+        <ion-label>Preço Promocional</ion-label>
+        <ion-checkbox item-right checked="false" (ionChange)="getChanged($event)"></ion-checkbox>         
+    </ion-item>
+  </form>
+
+  <!-- Permite a gravação da opinião do consumidor quando ao resultado da análise -->
+  <div class="like" style="background-color:#C2C3F9;background:#C2C3F9; width:100%;" no-padding>
+      <div class="comprar">Confirma preço atual?</div>
+      <div style="background-color:#C2C3F9; padding-bottom: 40px;">
+        <div class="esq" style="text-align: left; width:50%; padding-left:25px; display: inline-block;">
+          <button ion-button icon-only start style="background-color:#C2C3F9; height:65px;"
+          (click)="confirmarPreco()">
+            <img src="assets/imgs/pricebook/like.png">
+          </button>
+        </div>
+      
+        <div class="dir" style="text-align: right; width:50%;padding-right:25px;">
+          <button ion-button icon-only (click)="novaLeitura()" style="background-color:#C2C3F9; height:65px; ">
+            <img src="assets/imgs/pricebook/deslike.png">
+          </button>
+        </div>
+        <br><p>&nbsp;</p><br>
+      </div>  
+  </div>
+</ion-content>

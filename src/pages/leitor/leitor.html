@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content style="text-align: center;" text-center>
+  
+  <img src="/assets/imgs/pricebook/leitor.png" style="padding-top:15px; padding-bottom: 5px;">
+  <span style="position: absolute; top:+213px; left: 210px; color: #000; font-family: verdana; font-size: 12px;">versão: {{versionNumber}}</span>
+
+  <ion-card class="welcome-card" style="width:94%;text-align: center; align-content: center;align-self: center;">
+    
+    <ion-card-header *ngIf="ShowBemVindo">
+      <ion-card-title>Bem Vindo ao PriceBook!</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p style='text-align: justify;'>Inicie a consulta do produto, clicando no botão abaixo e apontando para o código de barras desejado.</p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Icons -->
+  <button ion-button class="button-full" (click)="scanearProduto()">
+    <ion-icon name="ios-search"></ion-icon>
+    &nbsp; Ler Código de Barras
+  </button>
+
+  <!--button ion-button class="button-full" (click)="lerLocalizacaoAtual()">
+    <ion-icon name="ios-search"></ion-icon>
+    &nbsp; Ler Posição
+  </button>-->
+  <!--button ion-button class="button-full" (click)="isConnected()">
+    <ion-icon name="ios-search"></ion-icon> 
+    &nbsp; Verificar Internet
+  </button> -->
+
+  <img src="/assets/imgs/pricebook/barcode.png" style="padding-top:20px;">
+</ion-content>
+
+<ion-footer *ngIf="!ShowBemVindo">
+  <ion-toolbar>
+    <ion-title style="font-size: 8px;">{{msgFooter}}</ion-title>
+  </ion-toolbar>
+</ion-footer>

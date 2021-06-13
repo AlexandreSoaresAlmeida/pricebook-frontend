@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Histórico de Preços</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <!-- Informações do Produto -->
+  <h3 style="text-align:center; line-height:14px; padding-top:15px;">Detalhe do Produto</h3>
+  <div class="avatar-wrapper" style="width: 100%; text-align: center;">
+    <img class="produto_img" [src]="itemImageUrl" style="padding-top:10px; width:50%;">
+  </div> 
+
+  <p *ngIf="hp?.nomeTempProduto  == msgNomeTmp" id="msgNomeTmp" class="msgNomeTmp" style="color:#4C6C8C; text-align: center; margin: 0;">{{hp?.nomeTempProduto}}</p>
+  <p *ngIf="hp?.nomeTempProduto  != msgNomeTmp" id="msgNomeTmp" class="msgNomeTmp" style="color:#D00018; text-align: center; margin: 0;">{{hp?.nomeTempProduto}}</p>
+
+
+  <p style="padding-left: 55px; line-height:7px; height:7px;">Código de barras: {{barcode}}</p>
+  <div class="barcode-font-128 font55 center">{{barcode}}</div>
+
+  <!-- Avaliação -->
+  <ion-rating [readOnly]="false" [numStars]="5" [value]="avaliacaoLida2" (ionClick)="gravarRanking($event)"></ion-rating>
+  <p class="center colorRed lineSeparator">Clique na estrela para classificar o produto</p>
+
+  <!-- Gráfico de Barras -->
+  <br>
+  <div style="display: block">
+    <h3 style="text-align:center; line-height:14px;">Evolução de Preços</h3>
+    <h4 style="text-align:center; line-height:14px;">(Valor X Data)</h4>
+    <div style="display: block;">
+      <canvas baseChart
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [options]="barChartOptions" 
+              [colors]="barChartColors"
+              [legend]="barChartLegend"
+              [chartType]="barChartType"
+              (chartHover)="chartHovered2($event)"
+              (chartClick)="chartClicked2($event)">
+      </canvas>
+    </div>
+  </div> 
+  <p class="center colorBlue">Para mais de uma consulta de &nbsp;preço &nbsp;no&nbsp;&nbsp;mesmo</p>
+  <p class="center colorBlue">dia, para este produto, estará sendo considerado, </p>
+  <p class="center colorBlue lineSeparator">somente, aquele de menor valor apurado.</p>
+  <!-- Histórico de Registro de Preços -->
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher> 
+  
+  <br>
+  <h3 style="text-align:center; line-height:14px;">Historico</h3>
+  <h4 style="text-align:center; line-height:14px;">(Data X Preço)</h4>
+  <ion-list style="text-align: left;">
+    <button ion-item *ngFor="let item of items">
+      <ion-thumbnail item-start>
+          <ion-icon name="md-barcode" style="font-size:20px;"></ion-icon>
+      </ion-thumbnail>
+      <div style="font-family: 'Courier New', Courier, monospace; font-size:14px; padding-left:0px;text-align: left;">
+       
+        {{item?.dtHoraHistorico | date: 'dd/MM/yyyy HH:mm'}}
+        ....
+        {{item?.preco | currency:'BRL':true}}
+        <p *ngIf="item?.nomeTempProduto  != msgNomeTmp" class="txtMsgNomeTmp" style="color:#D00018; text-align: center; margin: 0;">{{item?.nomeTempProduto}}</p>
+        <div *ngIf="item?.precoPromocional" style="text-align: center; color: #002E5B;">
+          ** Preço Promocional **
+        </div>
+        <div *ngIf="item?.localAumentoAbusivo" 
+         style="text-align: center; width:100%; color: #8E0505; word-wrap: break-word;">
+            ** Reportado percepção de<br>
+            aumento abusivo de Preço no <br>
+            {{item?.localAumentoAbusivo}} **
+        </div>        
+      </div>
+    </button>
+  </ion-list>
+  
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title style="font-size: 8px;">{{msgFooter}}</ion-title>
+  </ion-toolbar>
+</ion-footer>

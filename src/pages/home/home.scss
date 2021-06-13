@@ -1,0 +1,85 @@
+page-home {   
+        h3 {
+            text-align: center;
+            //color: #ffffff;
+            color: #000000;
+        }
+
+        ion-content {
+            transition: all 12.1s ease;
+            background-color: #090f2f;
+        }
+
+        // *************************************************
+        // Configuração Orange
+        // *************************************************
+        /*
+        ion-footer {
+            transition: all 1.1s ease;
+            background-color: #ED9A3F !important;
+            background: #1E88E5 !important;
+            color: white !important;
+        }
+    
+        .toolbar-title {
+            color: #ffffff;
+        }
+    
+        .header .toolbar-background {
+            border-color: #3C3C3C;
+            background-color: #ED9A3F;
+        }
+
+        .footer {
+            background-color: #ED9A3F;
+        }
+
+        img {
+            // width: 130px;
+            width: 390px;
+            align-self: center;
+            margin: auto;
+            display:block;
+            padding: 01px;
+        }
+
+        */
+
+        // *************************************************
+        // Configuração Sky
+        // *************************************************
+        ion-footer {
+            transition: all 1.1s ease;
+            background-color: #4975B2 !important;
+            background: #1E88E5 !important;
+            //color: white !important;
+            color: #000000 !important;
+        }
+    
+        .toolbar-title {
+            //color: #ffffff;
+            color: #000000;
+        }
+    
+        .header .toolbar-background {
+            border-color: #3C3C3C;
+            background-color: #4975B2;
+        }
+
+        .footer {
+            background-color: #4975B2;
+        }
+
+        img {
+            // width: 130px;
+            width: 160px;
+            align-self: center;
+            margin: auto;
+            display:block;
+            padding: 01px;
+        }
+
+        .button-inner {
+            color: #000;
+        }
+    }
